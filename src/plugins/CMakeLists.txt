@@ -40,7 +40,7 @@
 # 		PRIVATE "${CMAKE_SOURCE_DIR}/app-controller/ctl-lib")
 
 
-PROJECT_TARGET_ADD(pushtotalk-lua)
+PROJECT_TARGET_ADD(canlow-js-stub-lua)
     file(GLOB LUA_FILES "*.lua")
 
 	add_input_files("${LUA_FILES}")

@@ -22,7 +22,7 @@
 #include <string.h>
 #include <time.h>
 
-#include "agl_services_pushtotalk-binding.h"
+#include "agl-service-canlowlevel-joystick-ctl_stub-binding.h"
 
 // Config Section definition (note: controls section index should match handle
 // retrieval in HalConfigExec)

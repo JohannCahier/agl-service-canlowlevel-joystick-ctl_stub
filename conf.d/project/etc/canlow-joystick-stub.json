@@ -1,0 +1,48 @@
+{
+  "$schema": "http://iot.bzh/download/public/schema/json/ctl-schema.json",
+  "metadata": {
+    "uid": "canlow-joystick-stub",
+    "version": "1.0",
+    "api": "canlow-joystick-stub",
+    "info": "Stub controller that replace CAN joystick by USB gamepad"
+  },
+  "plugins": [{
+    "uid": "canlow-joystick-stub",
+    "info": "canlow-joystick-stub",
+    "libs": [
+      "canlow-joystick-stub-api.lua",
+    ]
+  }],
+
+  "onload": [{
+    "uid": "ctlapp_sample/run_onload",
+    "action": "lua://canlow-joystick-stub#_run_onload_"
+  }],
+
+  "controls": [{
+    "uid": "subscribe",
+    "action": "lua://canlow-joystick-stub#subscribe"
+  },
+  {
+    "uid": "unsubscribe",
+    "action": "lua://canlow-joystick-stub#unsubscribe"
+  },
+  ],
+
+  "events": [{
+    "uid": "linux-joystick//dev/input/js0-button0",
+    "action": "lua://canlow-joystick-stub#joystick_event_button0_handler",
+  },
+  {
+    "uid": "linux-joystick//dev/input/js0-axis0_x",
+    "action": "lua://canlow-joystick-stub#joystick_event_axis0_x_handler",
+  },
+  {
+    "uid": "linux-joystick//dev/input/js0-axis0_y",
+    "action": "lua://canlow-joystick-stub#joystick_event_axis0_y_handler",
+  },
+  {
+    "uid": "linux-joystick//dev/input/js0-axis1_x",
+    "action": "lua://canlow-joystick-stub#joystick_event_axis1_x_handler",
+  }]
+}
